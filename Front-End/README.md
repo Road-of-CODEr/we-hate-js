@@ -6,7 +6,7 @@
 
 ## UI Library
 
-- React
+- [React](React/README.md)
 - Vue
 - Angular
 
@@ -28,3 +28,5 @@
 - babel
 - Webpack
 - socket.io
+- Redux
+- Redux-saga
