@@ -1,6 +1,6 @@
 # Next.js 를 알아보자
 
-[![image](https://media.oss.navercorp.com/user/9736/files/4798e200-7595-11ea-9588-1b798124b5ff)](https://youtu.be/jg2ha2RIWN0)
+[![image](https://user-images.githubusercontent.com/23524849/98015002-abdb9700-1e3f-11eb-8817-ac621306def5.png)](https://youtu.be/jg2ha2RIWN0)
 
 위 영상을 먼저 보면 훨씬 이해하기 쉬울 듯 하다.
 
