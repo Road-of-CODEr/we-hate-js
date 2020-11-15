@@ -9,6 +9,7 @@
 - [React](React/README.md)
 - Vue
 - Angular
+- Svelte
 - CSS-in-JS
 
 ## Production Framework
@@ -30,4 +31,4 @@
 - Webpack
 - socket.io
 - Redux
-- Redux-saga
+- [Redux-saga](Redux-saga/README.md)
