@@ -1,7 +1,5 @@
 # WE HATE JAVASCRIPT
 
-너무 싫어 너무 좋아 너무 싫어 너무 좋아 너무 싫어 **너무 좋아**
-
 ### 구성
 
 1. [JavaScript](JavaScript/README.md)

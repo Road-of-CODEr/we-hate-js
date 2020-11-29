@@ -11,10 +11,11 @@
 1. [NextJS 가 뭔가요?](introduce.md)
 2. [기본 구조](basicStructure.md)
 3. 기본 기능
+   1. [Pages](basicFeatures/pages.md)
 4. 라우팅
 5. API 라우팅
 6. 배포
 7. 고급 기능
 8. Next.js API 살펴보기
-9. `next.config.js` 다이브하기
+9.  `next.config.js` 다이브하기
 
