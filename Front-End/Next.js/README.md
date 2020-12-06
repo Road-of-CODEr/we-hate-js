@@ -13,7 +13,7 @@
 3. 기본 기능
    1. [Pages](basicFeatures/pages.md)
       - Static Generation, Server Side Rendering, Dynamic Route, Build time
-   2. [Data Fetching](basicFeatures/dataFetching.md)
+   2. [Data Fetching](basicFeatures/dataFetching/README.md)
       - getStaticProps, getStaticPaths, getServerSideProps, fallback, [[...slug]], PreviewMode, useSWR
 4. 라우팅
 5. API 라우팅
