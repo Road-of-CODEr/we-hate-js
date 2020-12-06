@@ -1,0 +1,3 @@
+# getStaticPaths
+
+TODO
