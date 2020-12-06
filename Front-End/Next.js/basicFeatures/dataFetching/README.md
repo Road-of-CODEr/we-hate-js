@@ -6,5 +6,5 @@
 
 1. [`getStaticProps`(Static Generation)](getStaticProps.md): 빌드시 데이터를 가져온다.
 2. [`getStaticPaths`(Static Generation)](getStaticPaths.md): 사전 렌더링 할 **동적 경로**를 설정한다.
-3. `getServerSideProps`(Server Side Rendering): 모든 요청에 데이터를 가져온다.
+3. [`getServerSideProps`(Server Side Rendering)](getServerSideProps.md): 모든 요청에 데이터를 가져온다.
 4. `fetch`, `useSWR`(Client Side): 클라이언트 측에서 데이터를 가져오는 방법.
