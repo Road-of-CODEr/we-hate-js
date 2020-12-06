@@ -64,7 +64,7 @@ export async function getStaticProps(context) {
 }
 ```
 
-> 만약 `fallback: false` 일 경우 `notFound` 는 불필요 하다. 사전 렌더링에서 모두 처리하기 때문
+> 만약 [`fallback: false`](./getStaticPaths.md) 일 경우 `notFound` 는 불필요 하다. 사전 렌더링에서 모두 처리하기 때문
 
 - `redirect`: 내/외부의 리소스로 리다이렉트 할 수 있는 인자. 
 
