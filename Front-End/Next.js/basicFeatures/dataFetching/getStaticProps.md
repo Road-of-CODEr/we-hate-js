@@ -1,14 +1,3 @@
-# Next.js 에서 데이터 가져오기
-
-이전의 [페이지 문서](pages.md)에서 사전 렌더링을 위해 데이터를 가져오는 두 가지 방법으로 **Static Generation**과 **ServerSide Rendering**이 있다고 했다.
-
-이번 장에서는 각 렌더링에서 사용할 수 있는 함수를 알아보자.
-
-1. `getStaticProps`(Static Generation): 빌드시 데이터를 가져온다.
-2. `getStaticPaths`(Static Generation): 사전 렌더링 할 **동적 경로**를 설정한다.
-3. `getServerSideProps`(Server Side Rendering): 모든 요청에 데이터를 가져온다.
-4. `fetch`, `useSWR`(Client Side): 클라이언트 측에서 데이터를 가져오는 방법.
-
 # getStaticProps
 
 ```javascript
@@ -75,7 +64,7 @@ export async function getStaticProps(context) {
 }
 ```
 
-> 만약 `fallback: false` 일 경우 `notFound` 는 불필요 하다. 사전 렌더링에서 모두 처리하기 때문
+> 만약 [`fallback: false`](./getStaticPaths.md) 일 경우 `notFound` 는 불필요 하다. 사전 렌더링에서 모두 처리하기 때문
 
 - `redirect`: 내/외부의 리소스로 리다이렉트 할 수 있는 인자. 
 
@@ -238,11 +227,11 @@ export default Blog
 
 `getStaticProps`를 사용하여 미리 랜더링된 페이지에 라우팅 접근을 하게 될 경우 Next.js 는 이 JSON 파일을(`next/link or router` 가 사용되는 페이지에 미리 생성되어 있음) 사용해 페이지를 그린다.
 
-![Link json](../assets/link-json.jpg)
+![Link json](../../assets/link-json.jpg)
 
 만약 `next/link` or `next/router` 를 사용해 Static Generation 페이지에 접근할 경우, 해당 페이지에서 위의 스샷과 같이 JSON 파일을 가지고 있게 된다.
 
-![Link json use](../assets/link-json-use.jpg)
+![Link json use](../../assets/link-json-use.jpg)
 
 따라서 해당 Static Generation 페이지에 접근할 경우 바로 JSON 파일을 사용해 데이터를 보여줄 수 있다.
 
@@ -267,5 +256,3 @@ export default Blog
 예를 들자면 Headless CMS 를 사용할 때 작업물을 발행하기 전 미리보기를 원하는 경우가 있을 수 있다.
 
 이때 [Preview Mode](#example-preview-mode) 를 사용하여 처리해 줄 수 있다.
-
-# getStaticPaths
