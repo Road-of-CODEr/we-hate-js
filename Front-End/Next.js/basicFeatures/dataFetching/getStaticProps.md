@@ -64,7 +64,7 @@ export async function getStaticProps(context) {
 }
 ```
 
-> 만약 [`fallback: false`](./getStaticPaths.md) 일 경우 `notFound` 는 불필요 하다. 사전 렌더링에서 모두 처리하기 때문
+> 만약 [`fallback: false`](https://github.com/Road-of-CODEr/we-hate-js/blob/master/Front-End/Next.js/basicFeatures/dataFetching/getStaticPaths.md#fallback-blocking) 일 경우 `notFound` 는 불필요 하다. 사전 렌더링에서 모두 처리하기 때문
 
 - `redirect`: 내/외부의 리소스로 리다이렉트 할 수 있는 인자. 
 
@@ -104,12 +104,12 @@ export async function getStaticProps(context) {
 const getData = async () => Promise.resolve({ awe: 'some' });
 
 const handler = async (req, res) => {
-	const data = await getData();
-	res.json({ data });
+  const data = await getData();
+  res.json({ data });
 };
 
 export const getAwesomeData = async () => {
-	return await getData();
+  return await getData();
 };
 
 export default handler;
@@ -120,26 +120,26 @@ export default handler;
 import api, { getAwesomeData } from './api/post';
 
 const PostApi = ({ data }) => {
-	console.log('postApi Client', data);
+  console.log('postApi Client', data);
 
-	return (
-		<>
-			<div>Page: post/api/{data.awe}</div>
-		</>
-	);
+  return (
+    <>
+      <div>Page: post/api/{data.awe}</div>
+    </>
+  );
 };
 
 export const getStaticProps = async () => {
-	// Direct fetch call will be throw Error!
-	// const res = await fetch('http://localhost:3000/api/post');
-	const data = await getAwesomeData();
-	console.log('GET DATA!', data, data?.awe);
+  // Direct fetch call will be throw Error!
+  // const res = await fetch('http://localhost:3000/api/post');
+  const data = await getAwesomeData();
+  console.log('GET DATA!', data, data?.awe);
 
-	return {
-		props: {
-			data,
-		},
-	};
+  return {
+    props: {
+      data,
+    },
+  };
 };
 
 export default PostApi;
@@ -256,3 +256,8 @@ export default Blog
 예를 들자면 Headless CMS 를 사용할 때 작업물을 발행하기 전 미리보기를 원하는 경우가 있을 수 있다.
 
 이때 [Preview Mode](#example-preview-mode) 를 사용하여 처리해 줄 수 있다.
+
+
+
+
+

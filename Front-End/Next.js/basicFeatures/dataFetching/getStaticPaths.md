@@ -39,36 +39,36 @@ return {
 ```javascript
 // pages/com/[...slug].js
 const com = ({ slug }) => {
-	if (!Array.isArray(slug)) return <h1>com</h1>;
+  if (!Array.isArray(slug)) return <h1>com</h1>;
 
   // localhost/100/101 - 사전 렌더링으로 만들어진 페이지
   // localhost/100/101/102 - 이하는 fallback 으로 만들어 질 수 있는 페이지
   // localhost/222/7227/102 - fallback 은 밑에서 다룬다.
   // ...etc 모두 가능
 	return (
-		<>
-			{slug.map((e, i) => (
-				<h1>
-					{i}: {e}
-				</h1>
-			))}
-		</>
-	);
+    <>
+      {slug.map((e, i) => (
+        <h1>
+          {i}: {e}
+        </h1>
+      ))}
+    </>
+  );
 };
 
 export const getStaticPaths = () => {
-	const paths = [{ params: { name: 'user', slug: ['100', '101'] } }];
-	return {
-		paths,
-		fallback: true,
-	};
+  const paths = [{ params: { name: 'user', slug: ['100', '101'] } }];
+  return {
+    paths,
+    fallback: true,
+  };
 };
 
 export const getStaticProps = ({ params }) => {
-	const { slug } = params;
-	return {
-		props: { slug },
-	};
+  const { slug } = params;
+  return {
+    props: { slug },
+  };
 };
 
 export default com;
@@ -81,7 +81,7 @@ export default com;
 
 `getStaticPaths` 는 반드시 `fallback` 인자를 반환해야한다.
 
-### `fallback: false`
+### fallback: false
 
 만약 `fallback: false` 일 경우 `paths` 에 정의해주지 않은 다른 모든 경로는 404 page 로 떨어지게 된다. 이 기능을 통해 다른 동적 경로를 막고 원하는 경로만 정의해줄 수 있다.
 
@@ -116,14 +116,14 @@ export async function getStaticProps({ params }) {
 export default Post
 ```
 
-### `fallback: true`
+### fallback: true
 
 만약 `fallback: true` 를 해주게 되면 `getStaticProps` 의 행동은 아래와 같이 변한다.
 
 - 빌드 시점에 `getStaticPaths` 에서 반환되는 경로가 `getStaticProps` 에 의해 사전 렌더링 된다.
 - **빌드시 생성되지 않은 경로는 404 페이지로 되지 않는다**. 대신 Next.js 는 각 경로의 페이지들에게 [`fallback` 상태](#fallback-pages) 임을 제공해 준다.
 - 요청이 들어오면 `getStaticProps` 를 백그라운드 작업으로 실행해 HTML 과 JSON 파일을 **정적 생성**(서버사이드렌더링이 아님!) 한다.
-- 정적 생성이 완료되면 브라우저는 정적 생성된 경로의 JSON 파일을 받게 된다. 이는 나중에 자동으로 페이지 렌더링에 필요한 props 로 사용 된다.([예시](추가 예정)) 사용자 시점에서 페이지가 fallback 상태였다가 전체 페이지로 전환 되는 것처럼 보이게 된다.(위의 `fallback 상태` 링크 설명)
+- 정적 생성이 완료되면 브라우저는 정적 생성된 경로의 JSON 파일을 받게 된다. 이는 나중에 자동으로 페이지 렌더링에 필요한 props 로 사용 된다.([예시](https://github.com/Road-of-CODEr/we-hate-js/blob/master/Front-End/Next.js/basicFeatures/dataFetching/getStaticProps.md#html-%EA%B3%BC-json-%EC%9D%84-%EB%AA%A8%EB%91%90-%EC%A0%95%EC%A0%81%EC%9C%BC%EB%A1%9C-%EC%83%9D%EC%84%B1)) 사용자 시점에서 페이지가 fallback 상태였다가 전체 페이지로 전환 되는 것처럼 보이게 된다.(위의 `fallback 상태` 링크 설명)
 - 동시에, Next.js 는 사전 렌더링 페이지 리스트에 해당 경로를 추가한다. 요청을 완료한 이후 동일한 경로로 접근하게 될 경우 정적 생성된 페이지를 받게 된다.(빌드 시점에 사전 렌더링된 다른 정적 페이지와 같아지는 것)
 - `fallback: true` 로 설정하면 `next export` 를 사용할 수 없다.(동적 경로를 허가했기 때문에 정적 export 를 할 수 없는 것: 경로를 사전에 알 수가 없다.)
 
@@ -180,9 +180,9 @@ export default Post
 
 이를 통해 빠른 빌드와 정적 생성의 이점을 모두 취할 수 있기 때문에 유저에게 좋은 경험을 준다.
 
-여기서 또 한가지 중요한 점은 `fallback: true` 는 ***정적 페이지를 업데이트 하지 않는다***! 정적 생성 업데이트와 동적 경로를 모두 사용하고 싶다면 [Incremental Static Regeneration]() 를 사용하라.
+여기서 또 한가지 중요한 점은 `fallback: true` 는 ***정적 페이지를 업데이트 하지 않는다***! 정적 생성 업데이트와 동적 경로를 모두 사용하고 싶다면 [Incremental Static Regeneration](https://github.com/Road-of-CODEr/we-hate-js/blob/master/Front-End/Next.js/basicFeatures/dataFetching/getStaticProps.md#%EC%A6%9D%EB%B6%84-%EC%A0%95%EC%A0%81-%EC%9E%AC%EC%83%9D%EC%84%B1incremental-static-regeneration) 를 사용하라.
 
-### `fallback: blocking`
+### fallback: blocking
 
 `fallback: blocking`은 10 버전에 새로 생긴 기능으로, 위의 예시처럼 `loading...` 과 같은 fallback 페이지를 보여주는 것이 아닌 사전 렌더링이 완료될 때까지 "기다리게" 하는 옵션이다.
 
@@ -210,3 +210,7 @@ blocking 상태일 때 `getStaticProps` 는 `fallback: true` 일때와 동일하
 ### development 모드에서는 모든 요청에 실행된다.
 
 `next dev` 에서는 빌드타임에서만이 아니라 모든 요청에 실행된다.
+
+
+
+
