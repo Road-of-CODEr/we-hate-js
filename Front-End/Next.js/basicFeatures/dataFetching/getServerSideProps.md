@@ -122,7 +122,7 @@ export default PostApi;
 
 ## 언제 `getServerSideProps` 를 사용해야 할까?
 
-요청 타임마다 반드시 데이터를 가져와야 할 경우 사용하면 좋다. Time to first byte(TTFB) 는 `getStaticProps` 보다 느릴 것이다. 모든 요청마다 서버에서 렌더링후 페이지를 내려주기 때문이다. 또한 CDN 케쉬도 할 수 없다.
+요청 타임마다 반드시 데이터를 가져와야 할 경우 사용하면 좋다. Time to first byte(TTFB) 는 `getStaticProps` 보다 느릴 것이다. 모든 요청마다 서버에서 렌더링후 페이지를 내려주기 때문이다. 또한 CDN 캐쉬도 할 수 없다.
 
 페이지별 데이터가 자주 바뀌거나 유저의 요청에 따라서 결과 페이지가 달라질 경우 사용한다.
 
