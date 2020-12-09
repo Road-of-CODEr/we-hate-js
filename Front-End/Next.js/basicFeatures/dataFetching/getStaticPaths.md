@@ -45,7 +45,7 @@ const com = ({ slug }) => {
   // localhost/100/101/102 - 이하는 fallback 으로 만들어 질 수 있는 페이지
   // localhost/222/7227/102 - fallback 은 밑에서 다룬다.
   // ...etc 모두 가능
-	return (
+  return (
     <>
       {slug.map((e, i) => (
         <h1>
