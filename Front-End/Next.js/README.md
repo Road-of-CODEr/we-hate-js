@@ -17,8 +17,9 @@
       - getStaticProps, getStaticPaths, getServerSideProps, fallback, [[...slug]], PreviewMode, useSWR
 4. 라우팅
 5. API 라우팅
-6. 배포
-7. 고급 기능
-8. Next.js API 살펴보기
-9.  `next.config.js` 다이브하기
+6. [redux-saga 와 함께 사용하기](next-redux-wrapper/README.md)
+7. 배포
+8. 고급 기능
+9. Next.js API 살펴보기
+10.  `next.config.js` 다이브하기
 
