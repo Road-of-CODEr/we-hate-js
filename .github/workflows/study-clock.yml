@@ -19,10 +19,10 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  build:
+  curl:
     runs-on: ubuntu-latest
     steps:
-      - uses: curl
-      - name: wei/curl@master
+      - name: curl
+        uses: wei/curl@master
         with:
           args: -X POST --data-urlencode payload={ channel:'#bot-test', text:'오늘 9시에 스터디가 있어요!' } https://hooks.slack.com/services/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
