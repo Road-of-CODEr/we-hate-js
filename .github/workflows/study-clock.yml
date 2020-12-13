@@ -6,7 +6,7 @@ name: study-noti-cron
 on:
     # https://crontab.guru/
     schedule:
-    - cron: '42 8 * * 0,3'
+    - cron: '53 8 * * 0,3'
     workflow_dispatch:
       inputs:
         logLevel:
@@ -19,10 +19,9 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  curl:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: curl
-        uses: wei/curl@master
-        with:
-          args: -X POST --data-urlencode "payload={\"channel\":\"#bot-test\", \"text\":\"오늘 9시에 스터디가 있어요.\"}" https://hooks.slack.com/services/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
+      - uses: actions/checkout@v2
+      - name: send message to slack
+        run: curl -X POST -H "Content-type:application/json" --data '{"channel":"#bot-test", "text":"오늘 9시에 스터디가 있어요."}' ${{ secrets.SLACK_URL }}
