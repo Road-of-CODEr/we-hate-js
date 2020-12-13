@@ -1,0 +1,28 @@
+# This is a basic workflow to help you get started with Actions
+
+name: study-noti-cron
+
+# Controls when the action will run. 
+on:
+    # https://crontab.guru/
+    schedule:
+    - cron: '30 8 * * 0,3'
+    workflow_dispatch:
+      inputs:
+        logLevel:
+          description: "Log level"
+          required: true
+          default: "warning"
+        tags:
+          description: "Test noti tags"
+
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: curl
+      - name: wei/curl@master
+        with:
+          args: -X POST --data-urlencode payload={ channel:'#bot-test', text:'오늘 9시에 스터디가 있어요!' } https://hooks.slack.com/services/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
