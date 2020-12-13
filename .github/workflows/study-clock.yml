@@ -24,4 +24,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: send message to slack
-        run: curl -X POST -H "Content-type:application/json" --data '{"channel":"#we-hate-nextjs", "text":"오늘 9시에 스터디가 있어요."}' ${{ secrets.SLACK_URL }}
+        run: curl -X POST -H "Content-type:application/json" --data '{"channel":"#we-hate-nextjs", "text":"<!channel> 오늘 9시에 스터디가 있어요."}' ${{ secrets.SLACK_URL }}
