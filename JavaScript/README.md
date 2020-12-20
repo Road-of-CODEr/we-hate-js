@@ -12,4 +12,4 @@
 - 스코프
 - 프로토타입
 - 호이스팅
-- [개념 정리](./concept/README.md)
+- [개념 정리](./core/README.md)

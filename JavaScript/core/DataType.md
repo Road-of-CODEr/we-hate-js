@@ -1,7 +1,7 @@
-# 1장 데이터 타입
-Javascript가 기본형과 참조형 데이터를 어떻게 처리하는지, 왜 다른지를 알아보는 장입니다!!
+# 데이터 타입
+JavaScript가 기본형과 참조형 데이터를 어떻게 처리하는지, 왜 다른지를 알아봅시다. 
 
-## 1-1 데이터 타입의 종류
+## 데이터 타입의 종류
 1. <a id="primitive">기본형</a>
     - 숫자(number)
     - 문자열(string)
@@ -27,43 +27,38 @@ Javascript가 기본형과 참조형 데이터를 어떻게 처리하는지, 왜
     - 기본형은 값이 담긴 주소값을 바로 복제
       - 기본형은 불변성을 띈다. 새로운 값을 할당하기 위해서 데이터 영역에 새로운 값이 생기고(없는 경우), 변수 영역에 있는 주소값이 변경된다. 
         <img src="./assets/1.png" width="500"> 
-        > 출처 : Hayoung's ppt based on [코어 자바스크립트](http://www.yes24.com/Product/Goods/78586788)
-
-
-
+        
     - 값이 담긴 주소값들로 이루어진 묶음을 가리키는 주소값을 복제
       - 아래는 참조형의 값을 변경하는 경우 일어나는 일
         - 생성된 객체의 변수 영역에서 가리키는 주소값이 변경된다
         <img src="./assets/2.png" width="500">
-        > 출처 : Hayoung's ppt based on [코어 자바스크립트](http://www.yes24.com/Product/Goods/78586788)
 
-## 1-2 데이터 타입에 관한 배경지식
+
+## 데이터 타입에 관한 배경지식
 
 1. 메모리와 데이터
    - 메모리 용량이 과거보다 월등히 커진 상황에서 나타난 자바스크립트는 상대적으로 메모리 관리에 대해 자유로움
    - 숫자의 경우 정수형, 부동소수형 구분없이 64비트/8바이트를 할당
-   - 모든 데이터는 바이트 단위의 식별자(메모리 주솟값, memory address)를 통해 서로 구분하고 연결
+   - 모든 데이터는 바이트 단위의 식별자(메모리 주소값, Memory address)를 통해 서로 구분하고 연결
 
 2. 식별자와 변수
    - 변수(variable): 변할 수 있는 수, 변할 수 있는 무언가(data)
    - 식별자(identifier): 어떤 데이터를 식별하는데 사용하는 이름, **변수명**
    
-## 1-3 변수 선언과 데이터 할당
+## 변수 선언과 데이터 할당
 1.  변수 선언
-    ```
+    ```javascript
         let a; 
     ```
     위의 선언은 '변할 수 있는 데이터를 만들겠습니다!!! 이 데이터는 a라는 이름으로 식별하겠습니다!'
 
     <img src="./assets/3.png" width="500">
 
-    > 출처 : Hayoung's ppt based on [코어 자바스크립트](http://www.yes24.com/Product/Goods/78586788)
-
     이렇게 공간을 하나 차지하게 되는것이 변수 선언 과정
 
 2. 데이터 할당
     * 데이터 할당할때 일어나는 일
-        ```
+        ```javascript
             let a;
             a = 'abc';
         ```
@@ -73,8 +68,6 @@ Javascript가 기본형과 참조형 데이터를 어떻게 처리하는지, 왜
         데이터 저장을 위한 별도의 메모리 공간을 확보하고, 그 주소를 a의 위치에 저장해준다. 
 
         <img src="./assets/4.png" width="500">
-
-        > 출처 : Hayoung's ppt based on [코어 자바스크립트](http://www.yes24.com/Product/Goods/78586788)
 
         데이터를 할당할때는 아래의 단계가 일어난다. 
 
@@ -93,10 +86,8 @@ Javascript가 기본형과 참조형 데이터를 어떻게 처리하는지, 왜
         - 데이터에서 변경이 있을때는 아래처럼 동작한다. 
         <img src="./assets/5.png" width="500"> 
 
-        > 출처 : Hayoung's ppt based on [코어 자바스크립트](http://www.yes24.com/Product/Goods/78586788)
 
-
-## 1-4 기본형 데이터와 참조형 데이터
+## 기본형 데이터와 참조형 데이터
 1. 불변값
    - 변수와 상수를 구분하는 성질은 **'변경가능성'**
    - 변수와 상수를 구분할때? _데이터 할당이 이뤄진 변수 공간에 다른 데이터를 재할당 할 수 있는가?_
@@ -111,8 +102,6 @@ Javascript가 기본형과 참조형 데이터를 어떻게 처리하는지, 왜
 
     <img src="./assets/2.png" width="500">
 
-    > 출처 : Hayoung's ppt based on [코어 자바스크립트](http://www.yes24.com/Product/Goods/78586788)
-
     기본형 데이터와 차이는 _**객체의 변수(프로퍼티) 영역**_ 이 별도로 존재한다는 것. 
 
     위의 그림을 봐도 데이터 영역은 여전히 불변이라, 프로퍼티 b에 새로운 값을 넣고 싶을때 데이터 영역에 새로운 공간을 할당 받고, 객체의 변수 영역에서 주소값을 바꾼다. 그래서 슬쩍보면 참조형 데이터는 _불변하지 않은것(가변)_ 으로 보이지만 **데이터 부분은 여전히 불변**이다. 
@@ -121,19 +110,15 @@ Javascript가 기본형과 참조형 데이터를 어떻게 처리하는지, 왜
    - 기본형 데이터의 복사
     <img src="./assets/6.png" width="500">
 
-    > 출처 : Hayoung's ppt based on [코어 자바스크립트](http://www.yes24.com/Product/Goods/78586788)
-
     복사할때 주소값을 복사한다. 
 
    - 참조형 데이터의 복사
     <img src="./assets/7.png" width="500">
 
-    > 출처 : Hayoung's ppt based on [코어 자바스크립트](http://www.yes24.com/Product/Goods/78586788)
-
     복사하면 obj2 = obj 하면 obj가 가지고 있는 주소값이 obj2에 저장된다. 
 
     
-## 1-5 불변 객체
+## 불변 객체
 1. 불변 객체를 만드는 법
     - 불변 객체는 React, Vue.js, Angular 등의 라이브러리 및 프레임워크 / 함수형 프로그래밍, 디자인 패턴에서 매우 중요한 개념!
 
@@ -151,7 +136,7 @@ Javascript가 기본형과 참조형 데이터를 어떻게 처리하는지, 왜
       - 객체를 JSON 문법의 문자열로 변환했다가 다시 JSON 객체로 변경
       - [immutable.js](https://immutable-js.github.io/immutable-js/), baobab.js
 
-## 1-6 undefined와 null
+## undefined와 null
 
 - 자바스크립트에는 없을을 나타내는 값이 두가지: `undefined` 와 `null`
 - undefined 인 세가지 경우
@@ -162,7 +147,7 @@ Javascript가 기본형과 참조형 데이터를 어떻게 처리하는지, 왜
 - null 은 비어있음을 명시적으로 나타내고 싶은 경우
   - typeof null이 object인 버그가 있으므로 주의하기
   - 어떤 변수의 값이 null인지 판별하기 위해서는 typeof외에 다른 방법을 사용해야한다. 
-  ```
+  ```javascript
     let n = null;
     console.log(typeof n); // 결과가 null 이 아니라 object라고 나온다
     console.log(n==undefined); // 결과가 true다
@@ -173,12 +158,10 @@ Javascript가 기본형과 참조형 데이터를 어떻게 처리하는지, 왜
   ```
 
 
-
-
 ## 정리
 - `변수`는 변경 가능한 데이터가 담길 수 있는 공간
 - `식별자`는 그 변수의 이름을 말함
 
 
 ### 출처
-[코어 자바스크립트](http://www.yes24.com/Product/Goods/78586788)
+[코어 자바스크립트](http://www.yes24.com/Product/Goods/78586788) 1장
