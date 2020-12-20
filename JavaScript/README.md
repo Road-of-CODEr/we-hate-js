@@ -12,4 +12,10 @@
 - 스코프
 - 프로토타입
 - 호이스팅
-- [개념 정리](./core/README.md)
+- [데이터 타입](DataType.md)
+- [실행 컨텍스트](ExecutionContext.md)
+- this
+- 콜백 함수
+- 클로저
+- 프로토타입
+- 클래스
