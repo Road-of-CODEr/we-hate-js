@@ -16,6 +16,6 @@
 - [실행 컨텍스트](ExecutionContext.md)
 - [this](this.md)
 - [콜백 함수](callback.md)
-- 클로저
-- 프로토타입
+- [클로저](closure.md)
+- [프로토타입](prototype.md)
 - 클래스

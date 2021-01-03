@@ -26,12 +26,12 @@ JavaScript가 기본형과 참조형 데이터를 어떻게 처리하는지, 왜
 - **그렇다면 차이점은?**
     - 기본형은 값이 담긴 주소값을 바로 복제
       - 기본형은 불변성을 띈다. 새로운 값을 할당하기 위해서 데이터 영역에 새로운 값이 생기고(없는 경우), 변수 영역에 있는 주소값이 변경된다. 
-        <img src="./assets/1.png" width="500"> 
+        <img src="./assets/memoryAddress1.png" width="500"> 
         
     - 값이 담긴 주소값들로 이루어진 묶음을 가리키는 주소값을 복제
       - 아래는 참조형의 값을 변경하는 경우 일어나는 일
         - 생성된 객체의 변수 영역에서 가리키는 주소값이 변경된다
-        <img src="./assets/2.png" width="500">
+        <img src="./assets/memoryAddress2.png" width="500">
 
 
 ## 데이터 타입에 관한 배경지식
@@ -52,7 +52,7 @@ JavaScript가 기본형과 참조형 데이터를 어떻게 처리하는지, 왜
     ```
     위의 선언은 '변할 수 있는 데이터를 만들겠습니다!!! 이 데이터는 a라는 이름으로 식별하겠습니다!'
 
-    <img src="./assets/3.png" width="500">
+    <img src="./assets/memoryAddress3.png" width="500">
 
     이렇게 공간을 하나 차지하게 되는것이 변수 선언 과정
 
@@ -67,7 +67,7 @@ JavaScript가 기본형과 참조형 데이터를 어떻게 처리하는지, 왜
 
         데이터 저장을 위한 별도의 메모리 공간을 확보하고, 그 주소를 a의 위치에 저장해준다. 
 
-        <img src="./assets/4.png" width="500">
+        <img src="./assets/memoryAddress4.png" width="500">
 
         데이터를 할당할때는 아래의 단계가 일어난다. 
 
@@ -84,7 +84,7 @@ JavaScript가 기본형과 참조형 데이터를 어떻게 처리하는지, 왜
         - 변수와 데이터를 별도의 공간에 나누어 저장하면 이 문제를 해결 할 수 있다.
 
         - 데이터에서 변경이 있을때는 아래처럼 동작한다. 
-        <img src="./assets/5.png" width="500"> 
+        <img src="./assets/memoryAddress5.png" width="500"> 
 
 
 ## 기본형 데이터와 참조형 데이터
@@ -100,7 +100,7 @@ JavaScript가 기본형과 참조형 데이터를 어떻게 처리하는지, 왜
 2. 가변값
     기본형 데이터가 모두 불변이라면, 참조형은 어쩐지 모두 가변값일것 같다! 꼭 그렇진 않다.
 
-    <img src="./assets/2.png" width="500">
+    <img src="./assets/memoryAddress2.png" width="500">
 
     기본형 데이터와 차이는 _**객체의 변수(프로퍼티) 영역**_ 이 별도로 존재한다는 것. 
 
@@ -108,12 +108,12 @@ JavaScript가 기본형과 참조형 데이터를 어떻게 처리하는지, 왜
 
 3. 변수 복사 비교
    - 기본형 데이터의 복사
-    <img src="./assets/6.png" width="500">
+    <img src="./assets/memoryAddress6.png" width="500">
 
     복사할때 주소값을 복사한다. 
 
    - 참조형 데이터의 복사
-    <img src="./assets/7.png" width="500">
+    <img src="./assets/memoryAddress7.png" width="500">
 
     복사하면 obj2 = obj 하면 obj가 가지고 있는 주소값이 obj2에 저장된다. 
 
