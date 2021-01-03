@@ -34,38 +34,38 @@
 
     1. 처음엔 콜스택에 뭐 암것두 없다. 
         
-        <img src="./assets/2-2.png" width="300"> 
+        <img src="./assets/callStack1.png" width="300"> 
 
 
     2. 처음 자바스크립트 코드를 실행할때 전역 컨텍스트가 콜스택에 담긴다. 일반 실행 컨텍스트와 다른 것은 없다. 
         `최상단 공간은 별도 실행 명령없이 브라우저가 자동으로 실행하므로 자바스크립트 파일이 열리면 바로 전역컨텍스트가 활성화 되는것으로 이해하기!`
 
-        <img src="./assets/2-3.png" width="300"> 
+        <img src="./assets/callStack2.png" width="300"> 
 
     
     3. 코드를 줄줄 읽어보다가 함수가 실행되는 **line 10 에서 자바스크립트 엔진이 outer의 실행컨텍스트**를 구성하고 콜스택에 넣는다. 
         
-        <img src="./assets/2-4.png" width="300"> 
+        <img src="./assets/callStack3.png" width="300"> 
 
         이렇게 outer가 콜스택의 최상단에 올라오면 전역 컨텍스트와 관련되서 실행하던 것을 멈추고, outer의 코드를 실행한다. 
 
     4. outer함수를 실행하다보면 **line 7 에서 inner함수를 만나면 inner함수의 실행 컨텍스트가 콜스택에 담기고**, outer 컨텍스트의 코드가 중단되고, inner를 실행한다. 
         
-        <img src="./assets/2-5.png" width="300"> 
+        <img src="./assets/callStack4.png" width="300"> 
 
 
     5. inner함수의 실행이 끝나면 inner 실행 컨텍스트가 콜스택에서 제거된다. 그리고 그다음 최상단인 outer 실행 컨텍스트로 돌아가서 마저 실행한다. 
         
-        <img src="./assets/2-4.png" width="300"> 
+        <img src="./assets/callStack3.png" width="300"> 
 
     6. outer함수의 실행이 끝나면 outer 실행 컨텍스트가 콜스택에서 제거되고, 콜스택에 전역컨텍스트만 남는다. 
         
-        <img src="./assets/2-3.png" width="300"> 
+        <img src="./assets/callStack2.png" width="300"> 
 
 
     7. 전역 컨택스트도 마저 실행하고 콜스택에는 아무것도 남지 않게 된다. 
         
-        <img src="./assets/2-2.png" width="300"> 
+        <img src="./assets/callStack1.png" width="300"> 
 
 
 - 실행 컨텍스트에 저장되는 내용?
@@ -73,7 +73,7 @@
   - 엔진이 활용하는 내용이라 개발자가 코드를 통해서 건드릴 수는 없다. 
   - 아래는 실행 컨텍스트 객체에 저장되는 내용이다
 
-    <img src="./assets/2-1.png" width="500"> 
+    <img src="./assets/executionContext.png" width="500"> 
 
 
 

@@ -18,7 +18,7 @@
     5. 인스턴스의 `__proto__` 는 Constructor의 prototype 속성을 참조한다. 
 
     * 도식화: 위의 절차를 도식화 하면 아래와 같다. 
-    <img src="./assets/11.png" width="400">
+    <img src="./assets/prototype.png" width="400">
 
     * 예제:     
         ```javascript
@@ -36,11 +36,11 @@
         - 2번째 줄에서 `__proto__` 는 __**생략 가능**__하기 떄문에 hayoung.getName()을 통해서는 this 가 hayoung이기 때문에 제대로된 결과가 출력된다. 
         - Person 생성자의 속성:
             
-            <img src="./assets/12.png" width="400">
+            <img src="./assets/PersonPrototype.png" width="400">
 
-        - hayoung 인스터의 속성:
+        - hayoung 인스턴스의 속성:
 
-            <img src="./assets/13.png" width="400">
+            <img src="./assets/HayoungProto.png" width="400">
         
     * 프로토타입의 개념 정리
         * JavaScript는 함수에 자동으로 prototype이라는 속성을 설정함

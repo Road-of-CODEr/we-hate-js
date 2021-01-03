@@ -93,7 +93,7 @@
 
             이를 통해 car.fuel = 1000 등의 동작을 할 수 없도록 했다. 하지만 여전히 car.run 의 값은 다른 값으로 덮어 씌울수 있다.
 
-            <img src="./assets/9.png" width="300">
+            <img src="./assets/closureOverwrite.png" width="300">
 
             위의 그림처럼 다른 함수로 덮어쓰기 할수가 있다. 
 
@@ -129,7 +129,7 @@
                 car.run()
             ```
 
-            <img src="./assets/10.png" width="300">
+            <img src="./assets/closureOverwriteDisable.png" width="300">
 
             이제 car.run 도 덮어쓰기가 안된다. 
 
