@@ -4,6 +4,9 @@
 
 > `redux-saga` 는 side-effect를 관리하기 쉽고 효율적이며 테스트하기 쉽고, 오류를 더 잘 처리하는 것을 목표로 하는 라이브러리다.
 
+- [Pulling Future Actions](PullingFutureActions.md)
+- [Non Blocking Calls](NonBlockingCalls.md)
+
 리덕스는 기본적으로 **동기**방식이기 때문에 비동기 처리가 어렵고 복잡해진다.
 
 따라서 리덕스사가는 리덕스의 미들웨어로 들어가 액션에서 스토어 변경할 때 비동기 로직을 더 쉽게 처리할 수 있도록 해주는 역할을 한다.
