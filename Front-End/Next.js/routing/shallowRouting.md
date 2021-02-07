@@ -86,5 +86,5 @@ export default function Index({ initialPropsCounter }) {
 
 위의 코드로 실행하게 되면 reload 할때마다 URL 쿼리의 counter 가 늘어나지만 `get...Props` 를 타지 않기 때문에 서버의 리소스를 아낄 수 있다는 장점이 있다.
 
-
+또한 [next/link](https://nextjs.org/docs/api-reference/next/link)에서 `shallow` 기능과 동일하다.(link 의 default 는 false 이다)
 
