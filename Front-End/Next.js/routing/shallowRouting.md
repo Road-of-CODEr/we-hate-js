@@ -3,7 +3,7 @@ Shallow Routing
 
 [공식 문서](https://nextjs.org/docs/routing/shallow-routing)
 
-Shallow Routing 은 `[getServerSideProps](../basicFeatures/dataFetching/getServerSideProps.md`, `[getStaticProps](../basicFeatures/dataFetching/getStaticProps.md)`, `getInitialProps` 과 같은 데이터 fetching 메서드를 다시 실행하지 않고 URL 을 바꿔주는 라우팅이다.
+Shallow Routing 은 `[getServerSideProps](https://github.com/Road-of-CODEr/we-hate-js/blob/master/Front-End/Next.js/basicFeatures/dataFetching/getServerSideProps.md)`, `[getStaticProps](https://github.com/Road-of-CODEr/we-hate-js/blob/master/Front-End/Next.js/basicFeatures/dataFetching/getStaticProps.md)`, `getInitialProps` 과 같은 데이터 fetching 메서드를 다시 실행하지 않고 URL 을 바꿔주는 라우팅이다.
 
 Shallow 라우팅을 사용해 URL 을 업데이트 하면 `pathname`, `query` 값의 상태를 잃지 않고 [Router 객체](https://nextjs.org/docs/api-reference/next/router#router-object)를 통해 받을 수 있게 된다.
 
@@ -85,4 +85,6 @@ export default function Index({ initialPropsCounter }) {
 ```
 
 위의 코드로 실행하게 되면 reload 할때마다 URL 쿼리의 counter 가 늘어나지만 `get...Props` 를 타지 않기 때문에 서버의 리소스를 아낄 수 있다는 장점이 있다.
+
+
 
