@@ -306,7 +306,7 @@ function add10ForArray(xArr: number[]): number[] {
 List<Number>에 대해서 작동하게 하기 위해 위와같은 함수를 추가로 만들어야한다.
 
 
-만약에 String, List<String> 을 input으로 넣어도 잘 작동해야 한담면?
+만약에 String, List<String> 을 input으로 넣어도 잘 작동해야 한다면?
 ```js
 function addA(x: string): string {
   return x + 'a';
