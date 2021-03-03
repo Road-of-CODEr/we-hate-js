@@ -233,7 +233,7 @@ rooms를 복사하여 새로운 newRooms라는 변수에 값을 변경했기 때
 
 ### Lazy
 ```js
-// 반복문을 사용한 일반적인 raange 함수 
+// 반복문을 사용한 일반적인 range 함수 
 const range = length => {
     let i = -1;
     const result = [];
