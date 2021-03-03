@@ -222,7 +222,7 @@ rooms를 복사하여 새로운 newRooms라는 변수에 값을 변경했기 때
 
 하지만 이 코드는 배열이 커지게 된다면 더 오래걸리고 더 메모리를 많이 차지하게 된다.
 
-이를 해결하기 위해 `Persistane Data Structure` 를 사용하면 된다.
+이를 해결하기 위해 `Persistent Data Structure` 를 사용하면 된다.
 
 기존의 배열을 복사하기 위해 새 배열을 만드는것이 아니라
 
