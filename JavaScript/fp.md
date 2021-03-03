@@ -160,7 +160,7 @@ const reduce = (f, acc, iter) => {
         acc = iter.next().value;
     }
     for (const it of iter) {
-        acc = f(acc, a);
+        acc = f(acc, it);
     }
     return acc;
 };
