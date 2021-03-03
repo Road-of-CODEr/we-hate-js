@@ -112,7 +112,7 @@ output에 영향을 주는것은 input 뿐이다
 ```js
 function makeAdjectifier(adjective) {
     return function (string) {
-        return adjective + 'cool' + string;
+        return adjective + ' ' + string;
     }
 }
 
