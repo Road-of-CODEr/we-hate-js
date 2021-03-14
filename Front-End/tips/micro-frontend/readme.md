@@ -3,11 +3,11 @@
 - 해당 레포에 컨트리뷰션은 따로 진행중
 
 ---
-**여러 팀이 각자 독립적으로 기능(features)을 제공**할 수 있게 **모던 웹 앱 구축**을 위한 기술(Techniques), 전략(strategies), 레시피(recipes)에 관한 이야기.
+**여러 팀이 각자 독립적으로 기능(features)을 제공**할 수 있게 **모던 웹 앱 구축**을 위한 기술(techniques), 전략(strategies), 레시피(recipes)에 관한 이야기.
 ## Micro Frontends란 무엇인가?
 **Micro Frontends**라는 용어는 2016년 말에 [ThoughtWorks Technology Radar](https://www.thoughtworks.com/radar/techniques/micro-frontends)에서 처음 등장했다. 그것은 마이크로 서비스의 개념을 프론트엔드 세계로 확장한다. 현재 추세는 기능이 풍부하고 파워풀한 브라우저 애플리케이션, 즉 마이크로 서비스 아키텍처 위에 단일 페이지 앱(SPA)을 구축하는 것이다. 시간이 지남에 따라, 프론트엔드는 여러 분리된 팀에 의해 개발되는 경우가 자주 생기다보니 프론트엔드 계층은 커지고 유지 관리가 더 어려워지고 있다. 이것을 [프론트엔드 모노리스(Frontend Monolith)](https://www.youtube.com/watch?v=pU1gXA0rfwc) 라고 부른다.
 
-Micro Frontends는 개별 팀들이 소유하고있는 웹사이트나 웹앱을 하나의 기능으로 보고, **그 기능(features)을 구성(composition)** 하자는 방식의 아이디어 이다. 각 팀 별로 팀에서 담당하는 뚜렷한 **비즈니스 영역** 혹은  **미션**이 있을 것이다. 각 팀내 에서는 데이터베이스에서 사용자 인터페이스에 이르기까지 **상호 기능(cross functional)**을 통해 **end-to-end** 기능을 개발한다.
+Micro Frontends는 개별 팀들이 소유하고있는 웹사이트나 웹앱을 하나의 기능으로 보고, **그 기능(features)을 구성(composition)** 하자는 방식의 아이디어 이다. 각 팀 별로 팀에서 담당하는 뚜렷한 **비즈니스 영역** 혹은  **미션**이 있을 것이다. 각 팀내 에서는 데이터베이스에서 사용자 인터페이스에 이르기까지 **상호 기능(cross functional)** 을 통해 **end-to-end** 기능을 개발한다.
 
 그러나, 이 아이디어는 새롭게 등장한 것이 아니다. [Self-contained Systems](http://scs-architecture.org/) 컨셉과 굉장히 공통점이 많다. 과거에는 이러한 접근 방식을 [수직화(Verticalised) 된 시스템을 위한 Frontend Integration](https://dev.otto.de/2014/07/29/scaling-with-microservices-and-vertical-decomposition/)라는 이름으로 불리기도 했다. 하지만 Micro Frontends는 확실히 더 친근하고 덜 부담스러운 용어이다.
 
@@ -30,7 +30,7 @@ __Organisation in Verticals__
 
 ## Micro Frontends의 핵심 아이디어
 
-* __기술 불가지론자(agnostic)__<br>각 팀은 다른 팀과 조정하지 않고도 기술 스택을 선택하고 업그레이드할 수 있어야 한다. [Custom Elements](#the-dom-is-the-api)는 구현 세부 정보를 숨기면서 다른 사용자에게 중립적인 인터페이스를 제공하는 좋은 방법이다.
+* __기술 불가지론자(agnostic)__<br>각 팀은 다른 팀과 조정하지 않고도 기술 스택을 선택하고 업그레이드할 수 있어야 한다. [Custom Elements](#DOM은-API다)는 구현 세부 정보를 숨기면서 다른 사용자에게 중립적인 인터페이스를 제공하는 좋은 방법이다.
 
 * __팀 코드 분리__<br>모든 팀이 동일한 프레임워크를 사용하더라도 런타임은 공유하지 말자. 공유 상태(shared state) 또는 전역 변수에 의존하지 말고 자체 독립 앱을 구축 하자.
 
@@ -67,7 +67,7 @@ __Organisation in Verticals__
 
 ### Clientside Integration
 
-예제에서 이 페이지는 세개의 팀이 별도로 소유한 components/fragments로 분할 된다. 이제 **구매 버튼**과 **장바구니**와 같은 구매 프로세스와 관련된 모든 책임은 **Checkout팀 (파란색)**이 가지고 있다고 하자. **Inspire팀 (녹색)**은 이 페이지의 **추천 제품**을 관리한다. 페이지 자체는 **Product팀 (빨간색)**이 소유하고 있다.
+예제에서 이 페이지는 세개의 팀이 별도로 소유한 components/fragments로 분할 된다. 이제 **구매 버튼**과 **장바구니**와 같은 구매 프로세스와 관련된 모든 책임은 **Checkout팀 (파란색)** 이 가지고 있다고 하자. **Inspire팀 (녹색)** 은 이 페이지의 **추천 제품** 을 관리한다. 페이지 자체는 **Product팀 (빨간색)** 이 소유하고 있다.
 
 [![Example 1 - Product Page - Composition](./assets/images/micro-frontend/three-teams.png)](./1-composition-client-only/)
 
@@ -261,9 +261,9 @@ Custom Element 태그 이름은 path name 으로 사용된다. 그리고 attribu
 
 `ssi: on;` 지시어(directive)는 SSI 기능을 가능하게 한다. 그리고 모든 팀이  `/blue`로 시작하는 URL로 접속시 정확히 어플리케이션(`team_blue:3001`)으로 라우팅 되게 하기 위해서 `upstream`과 `location` 블럭이 추가 되었다. 또한 `/` route는 home과 product 페이지를 관리하는 red팀에 매핑 된다.
 
-이 애니메이션은 **JavaScript가 비활성화(disabled)**된 트랙터 스토어 사이트를 보여준다.
+이 애니메이션은 **JavaScript가 비활성화(disabled)** 된 트랙터 스토어 사이트를 보여준다.
 
-[![Serverside Rendering - Disabled JavaScript](./assets/video/micro-frontend/micro-frontend/server-render.gif)](./assets/video/micro-frontend/micro-frontend/server-render.mp4)
+[![Serverside Rendering - Disabled JavaScript](./assets/video/micro-frontend/server-render.gif)](./assets/video/micro-frontend/server-render.mp4)
 
 [inspect the code](https://github.com/neuland/micro-frontends/tree/master/2-composition-universal)
 
@@ -301,7 +301,7 @@ SSI/ESI 접근 방식의 단점은 **가장 느린 fragment가 전체 페이지�
 *중요한 Side-note: Custom Element는 [self-closing이 지원되지 않으므로](https://developers.google.com/web/fundamentals/architecture/building-components/customelements#jsapi), `<green-recos sku="t_porsche" />`로 코드 작성시 제대로 동작하지 않을 수 있다.*
 
 
-<img alt="Reflow" src="./assets/video/micro-frontend/micro-frontend/data-fetching-reflow.gif" style="width: 500px" />
+<img alt="Reflow" src="./assets/video/micro-frontend/data-fetching-reflow.gif" style="width: 500px" />
 
 렌더링 작업은 브라우저에서만 수행된다. 하지만, 애니메이션에서 볼 수 있듯이, 이 변화는 이제 페이지의 **상당한 반향(substantial reflow)**을 가져왔다. 추천 영역이 처음에는 비어있다. green 팀의 JavaScript가 로드되고 실행된다. 개인화된 권장 사항을 가져오기 위한 API 호출이 수행된다. 그리고 추천 영역 마크업이 렌더되고 관련 이미지가 요청된다. 그 후, fragment는 더 많은 공간이 필요해 페이지의 레이아웃에 밀어넣는다.
 
@@ -309,7 +309,7 @@ SSI/ESI 접근 방식의 단점은 **가장 느린 fragment가 전체 페이지�
 
 더 좋은 방법은 skeleton screen이라고 불리는 기술을 사용하는 것이다. red 팀은 마크업에서 녹색-Recos SSI Include를 남긴다. 또한 green 팀은 서버측 렌더링 방법을 변경하여 컨텐츠의 개략적인 버전을 생성한다. skeleton 표시는 실제 콘텐츠의 레이아웃 스타일 일부를 재사용할 수 있다. 이렇게 하면 필요한 공간을 확보할 수 있고 실제 콘텐츠의 채우기가 점프를 유도하지 않는다.
 
-<img alt="Skeleton Screen" src="./assets/video/micro-frontend/micro-frontend/data-fetching-skeleton.gif" style="width: 500px" />
+<img alt="Skeleton Screen" src="./assets/video/micro-frontend/data-fetching-skeleton.gif" style="width: 500px" />
 
 Skeleton Screen은 **클라이언트 렌더링에** 매우 유용하다. custom element가 user action으로 인해 DOM에 삽입되면 서버에서 필요한 데이터가 도착할 때까지 **즉시 skeleton을 렌더**할 수 있다.
 
