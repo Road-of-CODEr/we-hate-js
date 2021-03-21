@@ -91,9 +91,27 @@ file extension 이나 path 별로 다르게 설정하자.
 
 `브라우저 <——> CDN server <——> origin server`
 
-위와 같은 모양이 됨. CDN server는 origin server로 요청하는 client이며, 동시에 브라우저에 응답을 주는 server가 된다.
+위와 같은 모양이 됨. CDN server는 origin server로 요청하는 client이며, 동시에 브라우저에 응답을 주는 server가 된다. CDN 서비스에 따라 정책이 다른데, [aws cloudfront 정책](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html#ExpirationDownloadDist)을 살펴보았다.
 
-추가예정입니다..
+- min TTL, default TTL, max TTL 설정이 가능
+    - max TTL 은 설정 안하면 31536000s(one year)임.
+    - default TTL은 설정 안하면 86400s(one day)임.
+- min TTL, max TTL과 origin server header의 충돌에 대한 정책
+    - origin server 응답헤더에 cache-control max-age 있을때
+        - min TTL = 0 일때: max-age와 max TTL 중 작은걸 택함, 브라우저에 응답은 max-age 전달해줌
+        - min TTL > 0 일때:
+            - min TTL < max-age < max TTL: max-age 따름
+            - max-age < min TTL: min TTL 따름, 브라우저 응답은 max-age 전달
+            - max-age > max TTL: max TTL 따름, 브라우저 응답은 max-age 전달
+    - origin server 응답헤더 cache-control max-age 없을때
+        - min TTL = 0 일때: cloudfront default TTL 을 따름
+        - min TTL > 0 일때: CloudFront minimum TTL or default TTL 중 큰걸 택함
+
+    그외에도 아래와 같은 조건일때 설명이 있음. 링크 참고..
+
+    - origin server 응답헤더 cache-control max-age & s-maxage 있을때
+    - origin server 응답헤더 Expires 있을때
+    - origin server 응답헤더 no-cache, no-store, private 있을때..
 
 
 **ref**
@@ -101,3 +119,4 @@ file extension 이나 path 별로 다르게 설정하자.
 - https://web.dev/http-cache
 - https://www.mnot.net/cache_docs/#BROWSER
 - https://betterexplained.com/articles/how-to-optimize-your-site-with-http-caching/
+- https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html#ExpirationDownloadDist
