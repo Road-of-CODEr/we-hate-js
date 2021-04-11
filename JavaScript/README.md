@@ -1,6 +1,7 @@
 # JavaScript
 
 - [자바스크립트의 기원](jsHistory.md)
+- [유용한 자바스크립트 함수](usefulCode.md)
 - 간단한 자바스크립트 예제
 - 왜 브라우저마다 자바스크립트의 동작이 다르다는 건가요?
 - JS와 V8의 관계
@@ -17,3 +18,4 @@
 - [클로저](closure.md)
 - [프로토타입](prototype.md)
 - 클래스
+- [자바스크립트로 알고리즘 풀기](algorithm.md)
