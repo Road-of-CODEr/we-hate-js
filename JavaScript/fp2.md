@@ -897,3 +897,20 @@ pipe(
 lodash는 함수자의 map 메소드를 지원해주지 않는다.
 
 또한 lodash는 메소드 체이닝시 lodash wrapper로 감싸져서 lodash 함수만 사용해야하는 번거로움이 있다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+출처 https://velog.io/@nakta/FP-in-JS-%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%A1%9C-%EC%A0%91%ED%95%B4%EB%B3%B4%EB%8A%94-%ED%95%A8%EC%88%98%ED%98%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%ED%95%A8%EC%88%98%EC%9E%90Functor
